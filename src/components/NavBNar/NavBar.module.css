@@ -1,0 +1,88 @@
+.NavBar {
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.NavBar img {
+    height: 1.25rem;
+}
+
+.NavBar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.NavBar .MobileNavigation ul {
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: .5rem;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+}
+
+.NavBar .MobileNavigation ul::before {
+    content: "";
+    width: 120%;
+    height: 100vh;
+    position: absolute;
+    top: -5rem;
+    left: -2rem;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    z-index: -1
+}
+
+.NavBar .MobileNavigation ul li {
+    padding: 1.6rem;
+}
+
+.NavBar .MobileNavigation ul li:nth-child(2) {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.NavBar nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.NavBar .Navigation {
+    display: none;
+}
+
+.NavBar .Navigation ul li {
+    padding: 0 1rem;
+}
+
+.NavBar .Navigation ul li a {
+    color: #fff;
+}
+
+.NavBar .MobileNavigation {
+    display: flex;
+    align-items: top;
+    z-index: 99
+}
+
+.NavBar .MobileNavigation .Hamburger {
+    position: absolute;
+    right: 7.5%;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .NavBar .MobileNavigation {
+        display: none;
+    }
+
+    .NavBar .Navigation {
+        display: flex;
+    }
+
+}
