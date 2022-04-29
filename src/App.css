@@ -4,10 +4,17 @@
   background-repeat: no-repeat;
   background-position: top;
   background-size: contain;
+  background-color: rgb(241, 241, 241);
 
 }
 
 .wrapper {
-  width: 90%;
+  width: 87%;
   margin: auto;
+  position: relative;
+  top: 11rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
 }

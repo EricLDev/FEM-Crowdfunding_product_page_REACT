@@ -1,0 +1,7 @@
+.Card {
+    background-color: #fff;
+    border-radius: .5rem;
+    padding: 2.25rem 1.5rem;
+    position: relative;
+    border: 1px solid hsl(0, 0%, 92%)
+}

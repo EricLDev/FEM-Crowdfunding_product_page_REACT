@@ -8,9 +8,9 @@ import { useState } from "react";
 const MobileNavigation = () => {
 	const [open, setOpen] = useState(false);
 
-	const hamburgerIcon = <ImMenu className={classes.Hamburger} size="1.5rem" color="white" onClick={() => setOpen(!open)} />;
+	const hamburgerIcon = <ImMenu className={classes.Hamburger} size="24px" color="white" onClick={() => setOpen(!open)} />;
 
-	const closeIcon = <MdOutlineClose className={classes.Hamburger} size="1.5rem" color="white" onClick={() => setOpen(!open)} />;
+	const closeIcon = <MdOutlineClose className={classes.Hamburger} size="24px" color="white" onClick={() => setOpen(!open)} />;
 
 	return (
 		<nav className={classes.MobileNavigation}>
