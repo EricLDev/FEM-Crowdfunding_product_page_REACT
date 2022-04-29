@@ -9,8 +9,8 @@ const MastercraftIntro = () => {
 	return (
 		<Card>
 			<img src={mastercraft} alt="" />
-			<h1>Mastercraft Bamboo Monitor Riser</h1>
-			<p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
+			<h1 className={classes["MastercraftIntro-h1"]}>Mastercraft Bamboo Monitor Riser</h1>
+			<p className={classes["MastercraftIntro-p"]}>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
 			<div className={classes.callToAction}>
 				<Button>Back this project</Button>
 				<img src={bookmark} alt="" />

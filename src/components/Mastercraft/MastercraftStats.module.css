@@ -1,0 +1,40 @@
+.MastercraftStats h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.MastercraftStats p {
+    color: hsl(0, 0%, 48%);
+    font-size: .85rem;
+    text-align: center;
+    line-height: 1.5rem;
+    font-weight: 500;
+    margin: .5rem 0;
+}
+
+.MastercraftStats .separator {
+    display: flex;
+    justify-content: center;
+    margin: 1.2rem 0 1.5rem 0;
+    ;
+}
+
+.MastercraftStats .separator>div {
+    width: 30%;
+    border-bottom: 1px solid hsl(0, 0%, 86%);
+    text-align: center;
+}
+
+.MastercraftStats .bgProgressionBar {
+    height: .75rem;
+    border-radius: 1rem;
+    background-color: hsl(0, 0%, 95%);
+    margin-top: 1.5rem;
+}
+
+.bgProgressionBar .ProgressionBar {
+    height: .75rem;
+    border-radius: 1rem;
+    width: 80%;
+    background-color: hsl(176, 50%, 47%);
+}

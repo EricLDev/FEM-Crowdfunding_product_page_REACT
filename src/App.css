@@ -1,8 +1,6 @@
 .App {
-  min-height: 100vh;
   background-image: url(./images/image-hero-mobile.jpg);
   background-repeat: no-repeat;
-  background-position: top;
   background-size: contain;
   background-color: rgb(241, 241, 241);
 
@@ -11,10 +9,10 @@
 .wrapper {
   width: 87%;
   margin: auto;
-  position: relative;
-  top: 11rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  margin-top: 11rem;
+  padding-bottom: 4rem;
 
 }
