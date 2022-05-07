@@ -1,0 +1,7 @@
+.ProjectDescription p {
+    color: hsl(0, 0%, 48%);
+    font-size: .85rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    margin: 1.5rem 0;
+}
