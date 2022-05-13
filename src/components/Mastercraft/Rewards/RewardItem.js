@@ -6,7 +6,7 @@ const RewardItem = (props) => {
 	return (
 		<div className={classes.RewardItem}>
 			<h4>{props.title}</h4>
-			<h4>{props.pledge}</h4>
+			<h4>Pledge ${props.pledge} or more</h4>
 			<p>{props.description}</p>
 			<p>
 				{props.leftNumber} <span>left</span>

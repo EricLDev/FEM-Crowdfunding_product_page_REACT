@@ -2,7 +2,7 @@ import "./App.css";
 import AboutProject from "./components/Mastercraft/AboutProject";
 import MastercraftIntro from "./components/Mastercraft/MastercraftIntro";
 import MastercraftStats from "./components/Mastercraft/MastercraftStats";
-import { NavBar } from "./components/NavBNar/NavBar";
+import { NavBar } from "./components/NavBar/NavBar";
 
 function App() {
 	return (

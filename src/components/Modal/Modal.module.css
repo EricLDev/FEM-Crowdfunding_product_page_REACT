@@ -1,0 +1,17 @@
+.headModal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.headModal img {
+    cursor: pointer;
+}
+
+p {
+    color: hsl(0, 0%, 48%);
+    font-size: .85rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+}
