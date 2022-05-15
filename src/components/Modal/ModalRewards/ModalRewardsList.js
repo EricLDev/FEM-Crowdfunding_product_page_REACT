@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ModalRewardItem from "./ModalRewardItem";
 import classes from "./ModalRewardsList.module.css";
 
@@ -34,10 +34,16 @@ const ModalRewardsList = () => {
 		},
 	];
 
+	const [selectedOption, setSelectedOption] = useState();
+
+	function onChangeHandler(id) {
+		setSelectedOption(id);
+	}
+
 	return (
 		<form className={classes.ModalRewardsList}>
 			{MODAL_REWARDS.map((reward) => {
-				return <ModalRewardItem key={reward.id} title={reward.title} id={reward.id} pledge={reward.pledge} description={reward.description} leftNumber={reward.leftNumber} />;
+				return <ModalRewardItem key={reward.id} title={reward.title} id={reward.id} pledge={reward.pledge} description={reward.description} leftNumber={reward.leftNumber} onChange={onChangeHandler} selectedOption={selectedOption} />;
 			})}
 		</form>
 	);

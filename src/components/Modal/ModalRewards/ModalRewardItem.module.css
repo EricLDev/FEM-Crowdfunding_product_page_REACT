@@ -5,6 +5,10 @@
     border: 1px solid hsl(0, 0%, 92%);
 }
 
+.ModalRewardItem.selectedItem {
+    border: 2px solid hsl(176, 50%, 47%)
+}
+
 .ModalRewardItem .inputGroup {
     display: flex;
     align-items: center;
@@ -12,6 +16,14 @@
 
 .inputGroup div {
     padding: 0 0 0 1rem;
+}
+
+.inputGroup div h4:nth-child(1) {
+    cursor: pointer;
+}
+
+.inputGroup div h4:nth-child(1):hover {
+    color: hsl(176, 50%, 47%);
 }
 
 .inputGroup div h4:nth-child(2) {
@@ -49,4 +61,43 @@
     width: 1.5rem;
     height: 1.5rem;
     cursor: pointer;
+}
+
+.pledgeForm {
+    position: relative;
+    text-align: center;
+    padding-top: 1.5rem;
+
+}
+
+.pledgeForm .borderTop {
+    position: absolute;
+    height: 2px;
+    left: -10.5%;
+    top: 0;
+    width: calc(100%/0.825);
+    background-color: hsl(0, 0%, 92%);
+}
+
+.pledgeForm label {
+    color: hsl(0, 0%, 48%);
+    font-size: .85rem;
+}
+
+.pledgeInputGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+}
+
+.pledgeInputGroup input {
+    width: 6rem;
+    border-radius: 2rem;
+    border: 1px solid hsl(0, 0%, 92%);
+    padding: 0 1.25rem;
+}
+
+.pledgeInputGroup input::placeholder {
+    font-weight: 700;
+    color: hsl(0, 0%, 48%)
 }

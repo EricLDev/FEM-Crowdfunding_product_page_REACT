@@ -3,17 +3,14 @@ import classes from "./ModalRewardItem.module.css";
 import Button from "../../UI/Button";
 
 const ModalRewardItem = (props) => {
-	const [selectedOption, setSelectedOption] = useState();
+	const { rewardAmount, setRewardAmount } = useState();
 
-	function onClickHandler(e) {
-		setSelectedOption(e.target.checked);
-		console.log(e.target.checked);
-	}
+	const selectedItem = props.selectedOption === String(props.id) ? classes.selectedItem : "";
 
 	return (
-		<div className={classes.ModalRewardItem}>
+		<div className={`${classes.ModalRewardItem} ${selectedItem}`}>
 			<div className={classes.inputGroup}>
-				<input type="radio" id={props.id} name="modal-reward-item" onClick={onClickHandler} />
+				<input type="radio" id={props.id} value={props.id} name="modal-reward-item" onChange={(event) => props.onChange(event.target.value)} />
 				<div>
 					<label htmlFor={props.id}>
 						<h4>{props.title}</h4>
@@ -30,7 +27,18 @@ const ModalRewardItem = (props) => {
 			) : (
 				""
 			)}
-			{selectedOption && <Button classCss="RewardButton">{props.leftNumber === "0" ? "Out of Stock" : "Select Reward"}</Button>}
+			{props.selectedOption === String(props.id) && (
+				<div className={classes.pledgeForm}>
+					<div className={classes.borderTop} />
+					<label htmlFor="pledge">Enter your pledge</label>
+					<div className={classes.pledgeInputGroup}>
+						<input type="text" id="pledge" placeholder="$" value={rewardAmount} onChange={(e) => setRewardAmount(e.target.value)} />
+						<Button type="submit" classCss="ModalRewardButton">
+							{props.leftNumber === "0" ? "Out of Stock" : "Continue"}
+						</Button>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 };
