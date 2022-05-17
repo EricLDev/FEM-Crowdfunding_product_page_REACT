@@ -3,7 +3,7 @@ import classes from "./ModalRewardItem.module.css";
 import Button from "../../UI/Button";
 
 const ModalRewardItem = (props) => {
-	const { rewardAmount, setRewardAmount } = useState();
+	const [rewardAmount, setRewardAmount] = useState();
 
 	const selectedItem = props.selectedOption === String(props.id) ? classes.selectedItem : "";
 
@@ -32,7 +32,14 @@ const ModalRewardItem = (props) => {
 					<div className={classes.borderTop} />
 					<label htmlFor="pledge">Enter your pledge</label>
 					<div className={classes.pledgeInputGroup}>
-						<input type="text" id="pledge" placeholder="$" value={rewardAmount} onChange={(e) => setRewardAmount(e.target.value)} />
+						<input
+							type="text"
+							id="pledge"
+							placeholder="$"
+							onChange={(event) => {
+								setRewardAmount(event.target.value);
+							}}
+						/>
 						<Button type="submit" classCss="ModalRewardButton">
 							{props.leftNumber === "0" ? "Out of Stock" : "Continue"}
 						</Button>
