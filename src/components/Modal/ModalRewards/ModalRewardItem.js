@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import classes from "./ModalRewardItem.module.css";
 import Button from "../../UI/Button";
+import { RewardsContext } from "../../context/RewardsContext";
 
 const ModalRewardItem = (props) => {
-	const [rewardAmount, setRewardAmount] = useState();
-
+	const rewardsCtx = useContext(RewardsContext);
+	const setPledgedAmount = rewardsCtx.setPledgedAmount;
+	let leftNumber = rewardsCtx.leftNumber;
+	leftNumber = props.leftNumber;
 	const selectedItem = props.selectedOption === String(props.id) ? classes.selectedItem : "";
 
 	return (
@@ -20,9 +23,9 @@ const ModalRewardItem = (props) => {
 			</div>
 
 			<p>{props.description}</p>
-			{props.leftNumber ? (
+			{props.pledge ? (
 				<p>
-					{props.leftNumber} <span>left</span>
+					{leftNumber} <span>left</span>
 				</p>
 			) : (
 				""
@@ -30,16 +33,20 @@ const ModalRewardItem = (props) => {
 			{props.selectedOption === String(props.id) && (
 				<div className={classes.pledgeForm}>
 					<div className={classes.borderTop} />
-					<label htmlFor="pledge">Enter your pledge</label>
-					<div className={classes.pledgeInputGroup}>
-						<input
-							type="text"
-							id="pledge"
-							placeholder="$"
-							onChange={(event) => {
-								setRewardAmount(event.target.value);
-							}}
-						/>
+					{props.pledge ? <label htmlFor="pledge">Enter your pledge</label> : ""}
+					<div className={classes.pledgeInputGroup} style={{ justifyContent: props.pledge ? "space-between" : "center" }}>
+						{props.pledge ? (
+							<input
+								type="text"
+								id="pledge"
+								placeholder="$"
+								onChange={(event) => {
+									setPledgedAmount(Number(event.target.value));
+								}}
+							/>
+						) : (
+							""
+						)}
 						<Button type="submit" classCss="ModalRewardButton">
 							{props.leftNumber === "0" ? "Out of Stock" : "Continue"}
 						</Button>
