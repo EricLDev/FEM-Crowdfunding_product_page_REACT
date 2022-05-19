@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { RewardsContext } from "../../context/RewardsContext";
+import ModalThankYou from "../ModalThankYou";
 import ModalRewardItem from "./ModalRewardItem";
 import classes from "./ModalRewardsList.module.css";
 
@@ -16,7 +17,8 @@ const ModalRewardsList = () => {
 	const setTotalBackers = rewardsCtx.setTotalBackers;
 	const setTotalAmount = rewardsCtx.setTotalAmount;
 	const pledgedAmount = rewardsCtx.pledgedAmount;
-	const setLeftNumber = rewardsCtx.setLeftNumber;
+	const setModalIsOpen = rewardsCtx.setModalIsOpen;
+	const setModalThankYouIsOpen = rewardsCtx.setModalThankYouIsOpen;
 
 	function onChangeHandler(id) {
 		setSelectedOption(id);
@@ -26,7 +28,8 @@ const ModalRewardsList = () => {
 		e.preventDefault();
 		setTotalBackers((prevTotalBackers) => prevTotalBackers + 1);
 		setTotalAmount((prevTotalAmount) => prevTotalAmount + pledgedAmount);
-		setLeftNumber((prevLeftNumber) => prevLeftNumber - 1);
+		setModalIsOpen(false);
+		setModalThankYouIsOpen(true);
 	}
 
 	return (

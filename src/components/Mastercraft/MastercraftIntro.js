@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
 import classes from "./MastercraftIntro.module.css";
@@ -6,9 +6,14 @@ import mastercraft from "../../images/logo-mastercraft.svg";
 import bookmark from "../../images/icon-bookmark.svg";
 import Modal from "../Modal/Modal";
 import Backdrop from "../Modal/Backdrop";
+import { RewardsContext } from "../context/RewardsContext";
+import ModalThankYou from "../Modal/ModalThankYou";
 
 const MastercraftIntro = () => {
-	const [modalIsOpen, setModalIsOpen] = useState(false);
+	const rewardsCtx = useContext(RewardsContext);
+	const modalIsOpen = rewardsCtx.modalIsOpen;
+	const setModalIsOpen = rewardsCtx.setModalIsOpen;
+	const modalThankYouIsOpen = rewardsCtx.modalThankYouIsOpen;
 
 	function onClickHandler() {
 		setModalIsOpen(true);
@@ -28,6 +33,8 @@ const MastercraftIntro = () => {
 			</div>
 			{modalIsOpen && <Modal onClick={closeModalHandler} />}
 			{modalIsOpen && <Backdrop onClick={closeModalHandler} />}
+			{modalThankYouIsOpen && <ModalThankYou />}
+			{modalThankYouIsOpen && <Backdrop onClick={closeModalHandler} />}
 		</Card>
 	);
 };

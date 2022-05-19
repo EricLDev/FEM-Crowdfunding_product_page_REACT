@@ -6,8 +6,6 @@ import { RewardsContext } from "../../context/RewardsContext";
 const ModalRewardItem = (props) => {
 	const rewardsCtx = useContext(RewardsContext);
 	const setPledgedAmount = rewardsCtx.setPledgedAmount;
-	let leftNumber = rewardsCtx.leftNumber;
-	leftNumber = props.leftNumber;
 	const selectedItem = props.selectedOption === String(props.id) ? classes.selectedItem : "";
 
 	return (
@@ -25,7 +23,7 @@ const ModalRewardItem = (props) => {
 			<p>{props.description}</p>
 			{props.pledge ? (
 				<p>
-					{leftNumber} <span>left</span>
+					{props.leftNumber} <span>left</span>
 				</p>
 			) : (
 				""
