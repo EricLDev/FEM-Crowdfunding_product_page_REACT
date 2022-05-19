@@ -29,6 +29,7 @@ const Rewards = [
 export const RewardsContext = createContext();
 
 export const RewardsContextProvider = (props) => {
+	const [selectedOption, setSelectedOption] = useState();
 	const [totalAmount, setTotalAmount] = useState(89914);
 	const [totalBackers, setTotalBackers] = useState(5007);
 	const [pledgedAmount, setPledgedAmount] = useState(0);
@@ -36,7 +37,22 @@ export const RewardsContextProvider = (props) => {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [modalThankYouIsOpen, setModalThankYouIsOpen] = useState(false);
 
-	const value = { rewards, setRewards, totalAmount, setTotalAmount, totalBackers, setTotalBackers, pledgedAmount, setPledgedAmount, modalIsOpen, setModalIsOpen, modalThankYouIsOpen, setModalThankYouIsOpen };
+	const value = {
+		rewards,
+		setRewards,
+		totalAmount,
+		setTotalAmount,
+		totalBackers,
+		setTotalBackers,
+		pledgedAmount,
+		setPledgedAmount,
+		modalIsOpen,
+		setModalIsOpen,
+		modalThankYouIsOpen,
+		setModalThankYouIsOpen,
+		selectedOption,
+		setSelectedOption,
+	};
 
 	return <RewardsContext.Provider value={value}>{props.children}</RewardsContext.Provider>;
 };

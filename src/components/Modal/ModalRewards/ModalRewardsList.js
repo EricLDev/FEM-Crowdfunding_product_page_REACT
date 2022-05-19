@@ -1,6 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { RewardsContext } from "../../context/RewardsContext";
-import ModalThankYou from "../ModalThankYou";
 import ModalRewardItem from "./ModalRewardItem";
 import classes from "./ModalRewardsList.module.css";
 
@@ -13,29 +12,59 @@ const ModalRewardsList = () => {
 	};
 	const REWARDS = [noReward, ...rewardsCtx.rewards];
 
-	const [selectedOption, setSelectedOption] = useState();
+	const selectedOption = rewardsCtx.selectedOption;
+	const setSelectedOption = rewardsCtx.setSelectedOption;
 	const setTotalBackers = rewardsCtx.setTotalBackers;
 	const setTotalAmount = rewardsCtx.setTotalAmount;
 	const pledgedAmount = rewardsCtx.pledgedAmount;
 	const setModalIsOpen = rewardsCtx.setModalIsOpen;
 	const setModalThankYouIsOpen = rewardsCtx.setModalThankYouIsOpen;
+	const [errorAmount, setErrorAmount] = useState(false);
+	const [errorMessage, setErrorMessage] = useState("");
+	const [itemPledge, setItemPledge] = useState();
 
 	function onChangeHandler(id) {
 		setSelectedOption(id);
 	}
 
-	function onSubmitHandler(e) {
+	function getItemPledge(pledge) {
+		setItemPledge(pledge);
+	}
+
+	function validateAmount(e) {
 		e.preventDefault();
-		setTotalBackers((prevTotalBackers) => prevTotalBackers + 1);
-		setTotalAmount((prevTotalAmount) => prevTotalAmount + pledgedAmount);
-		setModalIsOpen(false);
-		setModalThankYouIsOpen(true);
+
+		if (pledgedAmount < itemPledge) {
+			setErrorAmount(true);
+			setErrorMessage(`Please pledge $${itemPledge} or more`);
+		} else {
+			setTotalBackers((prevTotalBackers) => prevTotalBackers + 1);
+			setTotalAmount((prevTotalAmount) => prevTotalAmount + pledgedAmount);
+			setModalIsOpen(false);
+			setModalThankYouIsOpen(true);
+			setErrorAmount(false);
+			setErrorMessage("");
+		}
 	}
 
 	return (
-		<form className={classes.ModalRewardsList} onSubmit={onSubmitHandler}>
+		<form className={classes.ModalRewardsList} onSubmit={validateAmount}>
 			{REWARDS.map((reward) => {
-				return <ModalRewardItem key={reward.id} title={reward.title} id={reward.id} pledge={reward.pledge} description={reward.description} leftNumber={reward.leftNumber} onChange={onChangeHandler} selectedOption={selectedOption} />;
+				return (
+					<ModalRewardItem
+						key={reward.id}
+						title={reward.title}
+						id={reward.id}
+						pledge={reward.pledge}
+						description={reward.description}
+						leftNumber={reward.leftNumber}
+						onChange={onChangeHandler}
+						getItemPledge={getItemPledge}
+						selectedOption={selectedOption}
+						errorMessage={errorMessage}
+						errorAmount={errorAmount}
+					/>
+				);
 			})}
 		</form>
 	);

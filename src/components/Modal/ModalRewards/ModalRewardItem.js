@@ -6,7 +6,8 @@ import { RewardsContext } from "../../context/RewardsContext";
 const ModalRewardItem = (props) => {
 	const rewardsCtx = useContext(RewardsContext);
 	const setPledgedAmount = rewardsCtx.setPledgedAmount;
-	const selectedItem = props.selectedOption === String(props.id) ? classes.selectedItem : "";
+	const selectedOption = rewardsCtx.selectedOption;
+	const selectedItem = selectedOption === String(props.id) ? classes.selectedItem : "";
 
 	return (
 		<div className={`${classes.ModalRewardItem} ${selectedItem}`}>
@@ -28,7 +29,7 @@ const ModalRewardItem = (props) => {
 			) : (
 				""
 			)}
-			{props.selectedOption === String(props.id) && (
+			{selectedOption === String(props.id) && (
 				<div className={classes.pledgeForm}>
 					<div className={classes.borderTop} />
 					{props.pledge ? <label htmlFor="pledge">Enter your pledge</label> : ""}
@@ -45,10 +46,11 @@ const ModalRewardItem = (props) => {
 						) : (
 							""
 						)}
-						<Button type="submit" classCss="ModalRewardButton">
+						<Button onClick={props.getItemPledge(props.pledge)} type="submit" classCss="ModalRewardButton">
 							{props.leftNumber === "0" ? "Out of Stock" : "Continue"}
 						</Button>
 					</div>
+					{props.errorAmount && <h4 style={{ marginTop: "1rem", color: "red" }}>{props.errorMessage}</h4>}
 				</div>
 			)}
 		</div>

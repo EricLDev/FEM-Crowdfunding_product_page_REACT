@@ -10,7 +10,7 @@ const RewardsList = () => {
 	return (
 		<div className={classes.RewardsList}>
 			{REWARDS.map((reward) => {
-				return <RewardItem key={reward.id} title={reward.title} pledge={reward.pledge} description={reward.description} leftNumber={reward.leftNumber} />;
+				return <RewardItem key={reward.id} id={reward.id} title={reward.title} pledge={reward.pledge} description={reward.description} leftNumber={reward.leftNumber} />;
 			})}
 		</div>
 	);
