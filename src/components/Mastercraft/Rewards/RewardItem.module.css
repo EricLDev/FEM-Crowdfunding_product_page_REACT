@@ -5,6 +5,10 @@
     border: 1px solid hsl(0, 0%, 92%);
 }
 
+.RewardItem.Disabled {
+    opacity: .5
+}
+
 .RewardItem h4 {
     font-size: .85rem;
 }

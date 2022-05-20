@@ -13,15 +13,15 @@ const RewardItem = (props) => {
 		setModalIsOpen(true);
 	}
 	return (
-		<div className={classes.RewardItem}>
+		<div className={`${classes.RewardItem} ${props.leftNumber === 0 ? `${classes.Disabled}` : ""} `}>
 			<h4>{props.title}</h4>
 			<h4>Pledge ${props.pledge} or more</h4>
 			<p>{props.description}</p>
 			<p>
 				{props.leftNumber} <span>left</span>
 			</p>
-			<Button onClick={onClickHandler} classCss="RewardButton">
-				{props.leftNumber === "0" ? "Out of Stock" : "Select Reward"}
+			<Button onClick={onClickHandler} classCss={props.leftNumber === 0 ? "OutOfStock" : "RewardButton"} leftNumber={props.leftNumber}>
+				{props.leftNumber === 0 ? "Out of Stock" : "Select Reward"}
 			</Button>
 		</div>
 	);

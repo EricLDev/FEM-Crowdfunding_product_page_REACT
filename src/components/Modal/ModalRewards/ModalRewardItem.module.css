@@ -5,6 +5,10 @@
     border: 1px solid hsl(0, 0%, 92%);
 }
 
+.ModalRewardItem.Disabled {
+    opacity: .5
+}
+
 .ModalRewardItem.selectedItem {
     border: 2px solid hsl(176, 50%, 47%)
 }

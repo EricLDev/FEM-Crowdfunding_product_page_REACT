@@ -14,6 +14,12 @@
     font-size: .85rem;
 }
 
+.OutOfStock {
+    padding: 1rem 1.85rem;
+    font-size: .85rem;
+    background-color: hsl(0, 0%, 48%);
+}
+
 .ModalRewardButton {
     padding: 1rem 1.75rem;
     font-size: .8rem;

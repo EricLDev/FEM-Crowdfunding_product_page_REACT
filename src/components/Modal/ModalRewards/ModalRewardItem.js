@@ -10,9 +10,9 @@ const ModalRewardItem = (props) => {
 	const selectedItem = selectedOption === props.id ? classes.selectedItem : "";
 
 	return (
-		<div className={`${classes.ModalRewardItem} ${selectedItem}`}>
+		<div className={`${classes.ModalRewardItem} ${selectedItem} ${props.leftNumber === 0 ? `${classes.Disabled}` : ""}`}>
 			<div className={classes.inputGroup}>
-				<input type="radio" id={props.id} value={props.id} name="modal-reward-item" onChange={(event) => props.onChange(event.target.value)} />
+				<input type="radio" id={props.id} value={props.id} name="modal-reward-item" onChange={(event) => props.onChange(event.target.value)} disabled={props.leftNumber === 0} />
 				<div>
 					<label htmlFor={props.id}>
 						<h4>{props.title}</h4>
@@ -46,8 +46,8 @@ const ModalRewardItem = (props) => {
 						) : (
 							""
 						)}
-						<Button onClick={() => props.getItemData(props.pledge, props.leftNumber)} type="submit" classCss="ModalRewardButton">
-							{props.leftNumber === "0" ? "Out of Stock" : "Continue"}
+						<Button onClick={() => props.getItemData(props.pledge, props.leftNumber)} type="submit" classCss="ModalRewardButton" leftNumber={props.leftNumber}>
+							{props.leftNumber === 0 ? "Out of Stock" : "Continue"}
 						</Button>
 					</div>
 					{props.errorAmount && <h4 style={{ marginTop: "1rem", color: "red" }}>{props.errorMessage}</h4>}
