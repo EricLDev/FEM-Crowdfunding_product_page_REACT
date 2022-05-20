@@ -9,7 +9,7 @@ const Modal = (props) => {
 		<Card classCss="Modal">
 			<div className={classes.headModal}>
 				<h3>Back this project</h3>
-				<img src={close} style={{ height: "1rem", width: "1rem" }} alt="" onClick={props.onClick} />
+				<img src={close} alt="" onClick={props.onClick} />
 			</div>
 			<p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 			<ModalRewardsList />

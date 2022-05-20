@@ -6,7 +6,7 @@ import mastercraft from "../../images/logo-mastercraft.svg";
 import bookmark from "../../images/icon-bookmark.svg";
 import Modal from "../Modal/Modal";
 import Backdrop from "../Modal/Backdrop";
-import { RewardsContext } from "../context/RewardsContext";
+import { RewardsContext } from "../../context/RewardsContext";
 import ModalThankYou from "../Modal/ModalThankYou";
 
 const MastercraftIntro = () => {

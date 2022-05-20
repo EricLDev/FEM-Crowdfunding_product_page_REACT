@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { RewardsContext } from "../../context/RewardsContext";
+import { RewardsContext } from "../../../context/RewardsContext";
 import Button from "../../UI/Button";
 import classes from "./RewardItem.module.css";
 

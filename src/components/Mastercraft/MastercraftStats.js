@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import Card from "../UI/Card";
 import classes from "./MastercraftStats.module.css";
-import { RewardsContext } from "../context/RewardsContext";
+import { RewardsContext } from "../../context/RewardsContext";
 
 const MastercraftStats = () => {
 	const rewardsCtx = useContext(RewardsContext);

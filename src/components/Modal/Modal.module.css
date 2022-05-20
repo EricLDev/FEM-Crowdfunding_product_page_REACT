@@ -6,7 +6,13 @@
 }
 
 .headModal img {
+    width: 1rem;
+    height: 1rem;
     cursor: pointer;
+}
+
+.headModal img:hover {
+    filter: invert(0%) sepia(10%) saturate(7489%) hue-rotate(339deg) brightness(104%) contrast(100%);
 }
 
 p {

@@ -100,9 +100,14 @@
     border-radius: 2rem;
     border: 1px solid hsl(0, 0%, 92%);
     padding: 0 1.25rem;
+
 }
 
 .pledgeInputGroup input::placeholder {
     font-weight: 700;
     color: hsl(0, 0%, 48%)
+}
+
+.pledgeInputGroup input:focus {
+    outline: 2px solid hsl(176, 50%, 47%);
 }

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import classes from "./ModalRewardItem.module.css";
 import Button from "../../UI/Button";
-import { RewardsContext } from "../../context/RewardsContext";
+import { RewardsContext } from "../../../context/RewardsContext";
 
 const ModalRewardItem = (props) => {
 	const rewardsCtx = useContext(RewardsContext);

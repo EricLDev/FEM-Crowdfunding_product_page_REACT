@@ -3,7 +3,7 @@ import Card from "../UI/Card";
 import classes from "./ModalThankYou.module.css";
 import check from "../../images/icon-check.svg";
 import Button from "../UI/Button";
-import { RewardsContext } from "../context/RewardsContext";
+import { RewardsContext } from "../../context/RewardsContext";
 
 const ModalThankYou = () => {
 	const rewardsCtx = useContext(RewardsContext);

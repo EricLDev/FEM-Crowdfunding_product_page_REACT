@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { RewardsContext } from "../../context/RewardsContext";
+import { RewardsContext } from "../../../context/RewardsContext";
 import ModalRewardItem from "./ModalRewardItem";
 import classes from "./ModalRewardsList.module.css";
 

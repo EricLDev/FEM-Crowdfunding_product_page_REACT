@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import RewardItem from "./RewardItem";
 import classes from "./RewardsList.module.css";
-import { RewardsContext } from "../../context/RewardsContext.js";
+import { RewardsContext } from "../../../context/RewardsContext";
 
 const RewardsList = () => {
 	const rewardsCtx = useContext(RewardsContext);

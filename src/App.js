@@ -1,5 +1,5 @@
 import "./App.css";
-import { RewardsContextProvider } from "./components/context/RewardsContext";
+import { RewardsContextProvider } from "./context/RewardsContext";
 import AboutProject from "./components/Mastercraft/AboutProject";
 import MastercraftIntro from "./components/Mastercraft/MastercraftIntro";
 import MastercraftStats from "./components/Mastercraft/MastercraftStats";
