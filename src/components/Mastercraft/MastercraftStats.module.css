@@ -35,6 +35,5 @@
 .bgProgressionBar .ProgressionBar {
     height: .75rem;
     border-radius: 1rem;
-    width: 80%;
     background-color: hsl(176, 50%, 47%);
 }

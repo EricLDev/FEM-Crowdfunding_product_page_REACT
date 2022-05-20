@@ -11,6 +11,8 @@ const MastercraftStats = () => {
 	const formattedTotalBackers = totalBackers.toLocaleString("en-US");
 	const [daysLeft, setDaysLeft] = useState();
 
+	let progressionBarWidth = Math.floor(totalAmount / 1000);
+
 	var countDownDate = new Date("Jan 5, 2023 15:37:25").getTime();
 
 	var x = setInterval(function () {
@@ -54,7 +56,7 @@ const MastercraftStats = () => {
 					<p>days left</p>
 				</div>
 				<div className={classes.bgProgressionBar}>
-					<div className={classes.ProgressionBar}></div>
+					<div className={classes.ProgressionBar} style={{ width: `${progressionBarWidth}%` }}></div>
 				</div>
 			</div>
 		</Card>

@@ -9,6 +9,10 @@
     cursor: pointer;
 }
 
+.Button:hover {
+    background-color: hsl(176, 72%, 28%);
+}
+
 .RewardButton {
     padding: 1rem 1.85rem;
     font-size: .85rem;

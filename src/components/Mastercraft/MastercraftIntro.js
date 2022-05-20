@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
 import classes from "./MastercraftIntro.module.css";
@@ -14,6 +14,7 @@ const MastercraftIntro = () => {
 	const modalIsOpen = rewardsCtx.modalIsOpen;
 	const setModalIsOpen = rewardsCtx.setModalIsOpen;
 	const modalThankYouIsOpen = rewardsCtx.modalThankYouIsOpen;
+	const [isBookmarked, setIsBookmarked] = useState(false);
 
 	function onClickHandler() {
 		setModalIsOpen(true);
@@ -29,7 +30,7 @@ const MastercraftIntro = () => {
 			<p className={classes["MastercraftIntro-p"]}>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
 			<div className={classes.callToAction}>
 				<Button onClick={onClickHandler}>Back this project</Button>
-				<img src={bookmark} alt="" />
+				<img src={bookmark} className={isBookmarked ? `${classes.isBookmarked}` : ""} alt="" onClick={() => setIsBookmarked(!isBookmarked)} />
 			</div>
 			{modalIsOpen && <Modal onClick={closeModalHandler} />}
 			{modalIsOpen && <Backdrop onClick={closeModalHandler} />}
