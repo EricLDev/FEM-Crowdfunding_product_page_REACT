@@ -1,16 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { RewardsContext } from "../../context/RewardsContext";
 import ModalRewardItem from "./ModalRewardItem";
 import classes from "./ModalRewardsList.module.css";
 
 const ModalRewardsList = () => {
 	const rewardsCtx = useContext(RewardsContext);
+	const rewards = rewardsCtx.rewards;
+	const setRewards = rewardsCtx.setRewards;
 	const noReward = {
 		id: 0,
 		title: "Pledge with no reward",
 		description: "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
 	};
-	const REWARDS = [noReward, ...rewardsCtx.rewards];
+	const REWARDS = [noReward, ...rewards];
 
 	const selectedOption = rewardsCtx.selectedOption;
 	const setSelectedOption = rewardsCtx.setSelectedOption;
@@ -22,13 +24,26 @@ const ModalRewardsList = () => {
 	const [errorAmount, setErrorAmount] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
 	const [itemPledge, setItemPledge] = useState();
+	const setLeftNumber = rewardsCtx.setLeftNumber;
 
 	function onChangeHandler(id) {
-		setSelectedOption(id);
+		setSelectedOption(Number(id));
 	}
 
-	function getItemPledge(pledge) {
+	function getItemData(pledge, leftNumber) {
 		setItemPledge(pledge);
+		setLeftNumber(leftNumber);
+	}
+
+	function updateLeftNumber(id, rewards) {
+		const newRewards = rewards.map((obj) => {
+			if (obj.id === id) {
+				setLeftNumber(obj.leftNumber--);
+				return { ...obj, leftNumber: obj.leftNumber-- };
+			}
+			return obj;
+		});
+		setRewards(newRewards);
 	}
 
 	function validateAmount(e) {
@@ -44,6 +59,7 @@ const ModalRewardsList = () => {
 			setModalThankYouIsOpen(true);
 			setErrorAmount(false);
 			setErrorMessage("");
+			updateLeftNumber(selectedOption, rewards);
 		}
 	}
 
@@ -59,7 +75,7 @@ const ModalRewardsList = () => {
 						description={reward.description}
 						leftNumber={reward.leftNumber}
 						onChange={onChangeHandler}
-						getItemPledge={getItemPledge}
+						getItemData={getItemData}
 						selectedOption={selectedOption}
 						errorMessage={errorMessage}
 						errorAmount={errorAmount}

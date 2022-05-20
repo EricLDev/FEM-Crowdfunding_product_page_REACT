@@ -7,7 +7,7 @@ const ModalRewardItem = (props) => {
 	const rewardsCtx = useContext(RewardsContext);
 	const setPledgedAmount = rewardsCtx.setPledgedAmount;
 	const selectedOption = rewardsCtx.selectedOption;
-	const selectedItem = selectedOption === String(props.id) ? classes.selectedItem : "";
+	const selectedItem = selectedOption === props.id ? classes.selectedItem : "";
 
 	return (
 		<div className={`${classes.ModalRewardItem} ${selectedItem}`}>
@@ -29,7 +29,7 @@ const ModalRewardItem = (props) => {
 			) : (
 				""
 			)}
-			{selectedOption === String(props.id) && (
+			{selectedOption === props.id && (
 				<div className={classes.pledgeForm}>
 					<div className={classes.borderTop} />
 					{props.pledge ? <label htmlFor="pledge">Enter your pledge</label> : ""}
@@ -46,7 +46,7 @@ const ModalRewardItem = (props) => {
 						) : (
 							""
 						)}
-						<Button onClick={props.getItemPledge(props.pledge)} type="submit" classCss="ModalRewardButton">
+						<Button onClick={() => props.getItemData(props.pledge, props.leftNumber)} type="submit" classCss="ModalRewardButton">
 							{props.leftNumber === "0" ? "Out of Stock" : "Continue"}
 						</Button>
 					</div>
