@@ -2,7 +2,7 @@
     padding: 1.5rem 0;
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: 77.5%;
     margin: auto;
 }
 
@@ -79,12 +79,20 @@
 }
 
 @media screen and (min-width: 768px) {
+    .NavBar {
+        padding-top: 3rem;
+    }
+
     .NavBar .MobileNavigation {
         display: none;
     }
 
     .NavBar .Navigation {
         display: flex;
+    }
+
+    .NavBar nav ul li a {
+        font-size: .8rem;
     }
 
 }

@@ -15,6 +15,38 @@
     font-weight: 500;
 }
 
+.bookmark {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+
+
+.bookmark div {
+    display: none;
+    height: 56px;
+    width: 10.5rem;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: hsl(0, 0%, 95%);
+    border-radius: 2rem;
+    padding: 0 1.5rem;
+}
+
+.bookmark div p {
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.bookmark.bookmarked div {
+    width: 11.5rem;
+}
+
+.bookmarked p {
+    color: hsl(176, 50%, 47%);
+}
+
 img[src*="mastercraft"] {
     position: absolute;
     left: 50%;
@@ -33,4 +65,29 @@ img[src*="bookmark"] {
 
 .callToAction .isBookmarked {
     filter: invert(33%) sepia(77%) saturate(478%) hue-rotate(127deg) brightness(97%) contrast(87%);
+}
+
+@media screen and (min-width: 768px) {
+    .MastercraftIntro-h1 {
+        font-size: 1.75rem;
+    }
+
+    .MastercraftIntro-p {
+        font-size: 1rem;
+        margin-bottom: 2.25rem;
+    }
+
+    img[src*="mastercraft"] {
+
+        transform: translate(-50%, -137.5%)
+    }
+
+    .bookmark div {
+        display: flex;
+    }
+
+    .bookmark img {
+        position: absolute;
+    }
+
 }

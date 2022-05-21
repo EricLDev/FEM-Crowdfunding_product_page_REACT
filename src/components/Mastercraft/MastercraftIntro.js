@@ -30,7 +30,12 @@ const MastercraftIntro = () => {
 			<p className={classes["MastercraftIntro-p"]}>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
 			<div className={classes.callToAction}>
 				<Button onClick={onClickHandler}>Back this project</Button>
-				<img src={bookmark} className={isBookmarked ? `${classes.isBookmarked}` : ""} alt="" onClick={() => setIsBookmarked(!isBookmarked)} />
+				<div className={`${classes.bookmark} ${isBookmarked ? `${classes.bookmarked}` : ""}`}>
+					<img src={bookmark} className={isBookmarked ? `${classes.isBookmarked}` : ""} alt="" onClick={() => setIsBookmarked(!isBookmarked)} />
+					<div>
+						<p>{isBookmarked ? "Bookmarked" : "Bookmark"}</p>
+					</div>
+				</div>
 			</div>
 			{modalIsOpen && <Modal onClick={closeModalHandler} />}
 			{modalIsOpen && <Backdrop onClick={closeModalHandler} />}

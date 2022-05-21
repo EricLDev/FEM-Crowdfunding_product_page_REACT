@@ -14,5 +14,15 @@
   gap: 1.5rem;
   margin-top: 11rem;
   padding-bottom: 4rem;
+}
 
+@media screen and (min-width: 768px) {
+  .App {
+    background-image: url(./images/image-hero-desktop.jpg)
+  }
+
+  .wrapper {
+    width: 50%;
+    margin-top: 14.5rem;
+  }
 }
