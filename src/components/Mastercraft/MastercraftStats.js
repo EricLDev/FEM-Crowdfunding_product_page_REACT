@@ -55,9 +55,9 @@ const MastercraftStats = () => {
 					<h2>{daysLeft}</h2>
 					<p>days left</p>
 				</div>
-				<div className={classes.bgProgressionBar}>
-					<div className={classes.ProgressionBar} style={{ width: `${progressionBarWidth}%` }}></div>
-				</div>
+			</div>
+			<div className={classes.bgProgressionBar}>
+				<div className={classes.ProgressionBar} style={{ width: `${progressionBarWidth}%` }}></div>
 			</div>
 		</Card>
 	);

@@ -11,7 +11,7 @@ const Modal = (props) => {
 				<h3>Back this project</h3>
 				<img src={close} alt="" onClick={props.onClick} />
 			</div>
-			<p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+			<p id={classes.description}>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 			<ModalRewardsList />
 		</Card>
 	);

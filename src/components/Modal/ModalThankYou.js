@@ -14,10 +14,10 @@ const ModalThankYou = () => {
 	}
 
 	return (
-		<Card classCss="Modal">
+		<Card classCss="ModalThankYou">
 			<div className={classes.ModalThankYou}>
 				<div className={classes.check}>
-					<img src={check} style={{ height: "4rem", width: "4rem" }} alt="" />
+					<img id={classes.image} src={check} alt="" />
 				</div>
 				<h3>Thanks for your support!</h3>
 				<p> Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.</p>

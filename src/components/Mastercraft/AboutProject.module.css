@@ -5,3 +5,16 @@
     font-weight: 500;
     margin: 1.5rem 0;
 }
+
+@media screen and (min-width: 768px) {
+    .ProjectDescription h3 {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+
+    }
+
+    .ProjectDescription p {
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+}

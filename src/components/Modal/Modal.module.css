@@ -21,3 +21,26 @@ p {
     line-height: 1.5rem;
     font-weight: 500;
 }
+
+@media screen and (min-width: 768px) {
+    .headModal {
+        position: relative;
+    }
+
+    .headModal h3 {
+        font-size: 1.5rem;
+    }
+
+    .headModal img {
+        position: absolute;
+        right: -1rem;
+        top: -1rem;
+    }
+
+    #description {
+        font-size: .97rem;
+        margin-bottom: 2.25rem;
+
+    }
+
+}

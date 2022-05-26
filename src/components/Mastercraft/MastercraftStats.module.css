@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     margin: 1.2rem 0 1.5rem 0;
-    ;
+
 }
 
 .MastercraftStats .separator>div {
@@ -25,7 +25,7 @@
     text-align: center;
 }
 
-.MastercraftStats .bgProgressionBar {
+.bgProgressionBar {
     height: .75rem;
     border-radius: 1rem;
     background-color: hsl(0, 0%, 95%);
@@ -36,4 +36,20 @@
     height: .75rem;
     border-radius: 1rem;
     background-color: hsl(176, 50%, 47%);
+}
+
+@media screen and (min-width: 768px) {
+    .MastercraftStats {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .MastercraftStats .separator {
+        display: none;
+    }
+
+    .MastercraftStats .Stats:nth-of-type(3) {
+        border-left: 1px solid hsl(0, 0%, 86%);
+        border-right: 1px solid hsl(0, 0%, 86%);
+    }
 }

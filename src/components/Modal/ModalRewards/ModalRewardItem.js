@@ -13,7 +13,7 @@ const ModalRewardItem = (props) => {
 		<div className={`${classes.ModalRewardItem} ${selectedItem} ${props.leftNumber === 0 ? `${classes.Disabled}` : ""}`}>
 			<div className={classes.inputGroup}>
 				<input type="radio" id={props.id} value={props.id} name="modal-reward-item" onChange={(event) => props.onChange(event.target.value)} disabled={props.leftNumber === 0} />
-				<div>
+				<div id={classes.label}>
 					<label htmlFor={props.id}>
 						<h4>{props.title}</h4>
 					</label>
@@ -30,8 +30,7 @@ const ModalRewardItem = (props) => {
 				""
 			)}
 			{selectedOption === props.id && (
-				<div className={classes.pledgeForm}>
-					<div className={classes.borderTop} />
+				<div className={classes.pledgeForm} style={{ justifyContent: props.pledge ? "space-between" : "center" }}>
 					{props.pledge ? <label htmlFor="pledge">Enter your pledge</label> : ""}
 					<div className={classes.pledgeInputGroup} style={{ justifyContent: props.pledge ? "space-between" : "center" }}>
 						{props.pledge ? (
