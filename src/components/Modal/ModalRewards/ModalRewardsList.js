@@ -28,6 +28,7 @@ const ModalRewardsList = () => {
 
 	function onChangeHandler(id) {
 		setSelectedOption(Number(id));
+		setErrorAmount(false);
 	}
 
 	function getItemData(pledge, leftNumber) {

@@ -149,8 +149,9 @@
         grid-row: 3/4;
         display: flex;
         align-items: center;
-
     }
+
+
 
     .pledgeForm .pledgeInputGroup {
         margin: 0;
