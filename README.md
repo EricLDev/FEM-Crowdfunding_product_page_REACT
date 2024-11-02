@@ -1,6 +1,6 @@
 ### Links
 
-- Live Site URL: [https://ericl81.github.io/FEM-Crowdfunding_product_page_REACT/]
+- Live Site URL: [https://ericldev.github.io/FEM-Crowdfunding_product_page_REACT/]
 - Solution URL: [https://www.frontendmentor.io/solutions/react-app-with-modals-and-state-management-Sj1tMGl7Cc]
 
 # Frontend Mentor - Crowdfunding product page
